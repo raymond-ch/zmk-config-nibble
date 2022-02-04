@@ -47,8 +47,8 @@
         default_layer {
             label = "Base";
 
-            // sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
-			sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+			// sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
 
             bindings = <
             &kp ESC       &kp N1         &kp N2            &kp N3             &kp N4           &kp N5        &kp N6        &kp N7  &kp N8     &kp N9     &kp N0       &kp MINUS &kp EQUAL   &kp BSPC  &kp PRINTSCREEN
@@ -68,7 +68,7 @@
 &kp C_MUTE  &trans        &bt BT0        &bt BT1           &bt BT2            &bt BT3          &bt BT4       &bt BT_CLR    &trans  &trans     &trans    &kp C_PREV   &kp C_PP  &kp C_NEXT  &trans    &kp INS
 &trans      &trans        &kp C_AL_LOCK  &kp C_SLEEP       &trans             &trans           &trans        &trans        &trans  &trans     &trans    &trans       &trans                &trans    &kp HOME
 &trans      &trans        &trans         &ext_power EP_ON  &ext_power EP_OFF  &trans           &out OUT_BLE  &out OUT_USB  &trans  &trans     &trans    &bootloader  &reset    &trans      &trans    &kp END
-&trans      &trans        &trans         &trans                                                &trans                              &trans     &tog LCK  &trans       &trans                &trans    &trans
+&trans      &trans        &trans         &trans                                                &trans                              &trans     &trans    &tog LCK     &trans                &trans    &trans
             >;
         };
         lock_layer {
@@ -81,7 +81,7 @@
 &none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
 &trans      &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none                 &none    &none
 &none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
-&none       &none         &none          &none                                                 &none                               &none      &none     &none        &none                 &none    &none
+&none       &none         &none          &none                                                 &none                               &none      &none     &trans       &none                 &none    &none
             >;  
         };		
     };
