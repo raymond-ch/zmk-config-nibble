@@ -14,6 +14,7 @@
 #define BSE 0
 #define EXT 1
 #define LCK 2
+
 //--- Bluetooth extra
 #define BT0 BT_SEL 0
 #define BT1 BT_SEL 1
