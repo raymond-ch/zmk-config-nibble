@@ -74,14 +74,14 @@
         lock_layer {
             label = "Lock";
             
-            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>; // Disable rotary for this layer
+            sensor-bindings = <&inc_dec_kp LCAPS LCAPS>; // Disable rotary for this layer
 
             bindings = <
             &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
 &none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
 &trans      &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none                 &none    &none
 &none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
-&none       &none         &none          &none                                                 &none                               &none      &trans    &none        &none                 &none    &none
+&none       &none         &none          &none                                                 &none                               &none      &none    &none        &none                 &none    &none
             >;  
         };		
     };
