@@ -46,8 +46,7 @@
 			bindings = <&tog LCK>;
         };
     };
-};
-
+	
     keymap {
         compatible = "zmk,keymap";
 
