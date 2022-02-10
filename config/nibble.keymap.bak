@@ -13,8 +13,7 @@
 //--- Layer definition
 #define BSE 0
 #define EXT 1
-#define LCKFIN 2
-#define LCKSTA 2
+#define LCK 2
 
 //--- Bluetooth extra
 #define BT0 BT_SEL 0
@@ -48,6 +47,8 @@
         default_layer {
             label = "Base";
 
+            // sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+			// sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
 			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
 
 
@@ -68,36 +69,23 @@
             &kp GRAVE     &kp F1         &kp F2            &kp F3             &kp F4           &kp F5        &kp F6        &kp F7  &kp F8     &kp F9    &kp F10      &kp F11   &kp F12     &trans    &kp PAUSE_BREAK
 &kp C_MUTE  &trans        &bt BT0        &bt BT1           &bt BT2            &bt BT3          &bt BT4       &bt BT_CLR    &trans  &trans     &trans    &kp C_PREV   &kp C_PP  &kp C_NEXT  &trans    &kp INS
 &trans      &trans        &kp C_AL_LOCK  &kp C_SLEEP       &trans             &trans           &trans        &trans        &trans  &trans     &trans    &trans       &trans                &trans    &trans
-&trans      &trans        &trans         &ext_power EP_ON  &ext_power EP_OFF  &trans           &out OUT_USB  &out OUT_BLE  &trans  &trans     &trans    &bootloader  &reset    &trans      &trans    &trans
-&trans      &trans        &trans         &trans                                                &trans                              &trans     &trans    &tog LCKSTA  &trans                &trans    &trans
+&trans      &trans        &trans         &ext_power EP_ON  &ext_power EP_OFF  &trans           &out OUT_USB  &out OUT_BLE  &trans  &trans     &trans    &bootloader  &reset    &trans      &trans    &kp END
+&trans      &trans        &trans         &trans                                                &trans                              &trans     &trans    &tog LCK     &trans                &trans    &trans
             >;
         };
         lock_layer {
-            label = "Lock Final";
+            label = "Lock";
             
             sensor-bindings = <&inc_dec_kp LCAPS LCAPS>; // Disable rotary for this layer
 
             bindings = <
             &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
 &none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
-&mo LCKSTA  &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none                 &none    &none
+&trans      &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none                 &none    &none
 &none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
-&none       &none         &none          &none                                                 &none                               &none      &none     &none        &none                 &none    &none
+&none       &none         &none          &none                                                 &none                               &none      &none     &trans       &none                 &none    &none
             >;  
-        };
-        lock_layer2 {
-            label = "Lock Start";
-            
-            sensor-bindings = <&inc_dec_kp LCAPS LCAPS>; // Disable rotary for this layer
-
-            bindings = <
-            &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
-&none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
-&trans  &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none                 &none    &none
-&none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
-&none       &none         &none          &none                                                 &none                               &none      &none     &tog LCKFIN  &none                 &none    &none
-            >;  
-        };			
+        };		
     };
 };
 
