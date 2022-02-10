@@ -1,9 +1,9 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-# Disable Encoders
-CONFIG_EC11=n
-CONFIG_EC11_TRIGGER_GLOBAL_THREAD=n
+# Enable Encoders
+CONFIG_EC11=y
+CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
 
 # Disable LED
 CONFIG_ZMK_RGB_UNDERGLOW=n

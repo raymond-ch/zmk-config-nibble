@@ -13,8 +13,7 @@
 //--- Layer definition
 #define BSE 0
 #define EXT 1
-#define SYS 2
-#define LCK 3
+#define LCK 2
 
 //--- Bluetooth extra
 #define BT0 BT_SEL 0
@@ -36,18 +35,11 @@
             bindings = <&tog>, <&kp>;
         };
     };
-
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_lock {
-            timeout-ms = <10000>;
-            key-positions = <31 69>;
-			layers = <3>;
-            bindings = <&tog LCK>;
-        };
+	
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder_1>;
     };
-};
 
     keymap {
         compatible = "zmk,keymap";
@@ -55,32 +47,28 @@
         default_layer {
             label = "Base";
 
+            // sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+			// sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+
+
             bindings = <
             &kp ESC       &kp N1         &kp N2            &kp N3             &kp N4           &kp N5        &kp N6        &kp N7  &kp N8     &kp N9     &kp N0       &kp MINUS &kp EQUAL   &kp BSPC  &kp PRINTSCREEN
 &none       &kp TAB       &kp Q          &kp W             &kp E              &kp R            &kp T         &kp Y         &kp U   &kp I      &kp O      &kp P        &kp LBKT  &kp RBKT    &kp BSLH  &kp DEL
 &mo EXT     &th EXT CAPS  &kp A          &kp S             &kp D              &kp F            &kp G         &kp H         &kp J   &kp K      &kp L      &kp SEMI     &kp SQT               &kp RET   &kp HOME
 &trans      &kp LSHFT     &trans         &kp Z             &kp X              &kp C            &kp V         &kp B         &kp N   &kp M      &kp COMMA  &kp DOT      &kp FSLH  &kp RSHFT   &kp UP    &kp END
-&trans      &kp LCTRL     &kp LGUI       &kp LALT                                              &kp SPACE                           &kp RALT   &mo SYS    &kp RCTRL    &kp LEFT              &kp DOWN  &kp RIGHT
+&trans      &kp LCTRL     &kp LGUI       &kp LALT                                              &kp SPACE                           &kp RALT   &kp K_APP  &kp RCTRL    &kp LEFT              &kp DOWN  &kp RIGHT
             >;
         };
         extra_layer {
             label = "Extra";
+            
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
 
             bindings = <
             &kp GRAVE     &kp F1         &kp F2            &kp F3             &kp F4           &kp F5        &kp F6        &kp F7  &kp F8     &kp F9    &kp F10      &kp F11   &kp F12     &trans    &kp PAUSE_BREAK
-&none       &trans        &kp C_PREV     &kp C_PP          &kp C_NEXT         &trans           &trans        &trans        &trans  &trans     &trans    &trans       &trans    &trans      &trans    &kp INS
-&trans      &trans        &kp C_VOL_UP   &kp C_VOL_DN      &kp C_MUTE         &trans           &trans        &trans        &trans  &trans     &trans    &trans       &trans                &trans    &kp PG_UP
-&trans      &trans        &trans         &kp C_BRI_MAX     &kp C_BRI_UP       &kp C_BRI_DN     &kp C_BRI_MIN &trans        &trans  &trans     &trans    &trans       &trans    &trans      &trans    &kp PG_DN
-&trans      &trans        &trans         &trans                                                &trans                              &trans     &trans    &tog LCK     &trans                &trans    &trans
-            >;
-        };
-        system_layer {
-            label = "System";
-
-            bindings = <
-            &bt BT_CLR    &bt BT0        &bt BT1           &bt BT2            &bt BT3          &bt BT4       &trans        &kp F7  &kp F8     &kp F9    &trans       &trans    &trans      &trans    &trans
-&none       &trans        &trans         &trans            &trans             &trans           &trans        &trans        &trans  &trans     &trans    &trans       &trans    &trans      &trans    &trans
-&trans      &trans        &trans         &trans            &trans             &trans           &trans        &trans        &trans  &trans     &trans    &trans       &trans                &trans    &trans
+&kp C_MUTE  &trans        &bt BT0        &bt BT1           &bt BT2            &bt BT3          &bt BT4       &bt BT_CLR    &trans  &trans     &trans    &kp C_PREV   &kp C_PP  &kp C_NEXT  &trans    &kp INS
+&trans      &trans        &kp C_AL_LOCK  &kp C_SLEEP       &trans             &trans           &trans        &trans        &trans  &trans     &trans    &trans       &trans                &trans    &trans
 &trans      &trans        &trans         &ext_power EP_ON  &ext_power EP_OFF  &trans           &out OUT_USB  &out OUT_BLE  &trans  &trans     &trans    &bootloader  &reset    &trans      &trans    &trans
 &trans      &trans        &trans         &trans                                                &trans                              &trans     &trans    &tog LCK     &trans                &trans    &trans
             >;
@@ -88,12 +76,14 @@
         lock_layer {
             label = "Lock";
             
+            sensor-bindings = <&inc_dec_kp LCAPS LCAPS>; // Disable rotary for this layer
+
             bindings = <
             &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
 &none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
-&none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none                 &none    &none
+&trans      &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none                 &none    &none
 &none       &none         &none          &none             &none              &none            &none         &none         &none   &none      &none     &none        &none     &none       &none    &none
-&none       &none         &none          &none                                                 &none                               &none      &none     &none        &none                 &none    &none
+&none       &none         &none          &none                                                 &none                               &none      &none     &trans       &none                 &none    &none
             >;  
         };		
     };
