@@ -37,14 +37,13 @@
         };
     };
 
-/ {
     combos {
         compatible = "zmk,combos";
         combo_lock {
-            timeout-ms = <10000>;
-            key-positions = <31 69>;
+			timeout-ms = <10000>;
+			key-positions = <31 69>;
 			layers = <3>;
-            bindings = <&tog LCK>;
+			bindings = <&tog LCK>;
         };
     };
 };
