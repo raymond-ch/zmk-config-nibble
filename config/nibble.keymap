@@ -66,7 +66,7 @@
 
             bindings = <
             &kp GRAVE     &kp F1      &kp F2            &kp F3             &kp F4           &kp F5        &kp F6        &kp F7     &kp F8     &kp F9    &kp F10      &kp F11       &kp F12          &trans    &kp PAUSE_BREAK
-&none       &trans        &kp C_PREV  &kp C_PP          &kp C_NEXT         &trans           &trans        &kp KP_NUM    &trans     &kp KP_N7  &kp KP_N8 &kp KP_N9    &kp KP_ENTER  &kp KP_ASTERISK  &trans    &kp INS
+&none       &trans        &kp C_PREV  &kp C_PP          &kp C_NEXT         &trans           &trans        &trans        &kp KP_NUM &kp KP_N7  &kp KP_N8 &kp KP_N9    &kp KP_ENTER  &kp KP_ASTERISK  &trans    &kp INS
 &trans      &trans        &kp C_MUTE  &kp C_VOL_DN      &kp C_VOL_UP       &trans           &trans        &trans        &kp KP_N4  &kp KP_N5  &kp KP_N6 &kp KP_N0    &kp KP_PLUS                    &trans    &kp PG_UP
 &trans      &trans        &trans      &kp C_BRI_MIN     &kp C_BRI_DN       &kp C_BRI_UP     &kp C_BRI_MAX &trans        &kp KP_N1  &kp KP_N2  &kp KP_N3 &kp KP_DOT   &kp KP_MINUS  &trans           &trans    &kp PG_DN
 &trans      &trans        &trans      &trans                                                &trans                                 &trans     &trans    &tog LCK     &trans                         &trans    &trans
