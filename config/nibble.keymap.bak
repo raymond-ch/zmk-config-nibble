@@ -39,13 +39,21 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_lock {
+        combo_lock1 {
 			timeout-ms = <10000>;
 			// key-positions = <31 69>; // EXT + RCTRL
-			key-positions = <13 31 >;
+			key-positions = <31 13>; // Left EXT + BACKSPACE
 			layers = <3>;
 			bindings = <&tog LCK>;
         };
+		combo_lock2 {
+			timeout-ms = <10000>;
+			// key-positions = <31 69>; // EXT + RCTRL
+			key-positions = <68 13>; // Bottom EXT + BACKSPACE
+			layers = <3>;
+			bindings = <&tog LCK>;
+        };
+
     };
 	
     keymap {
