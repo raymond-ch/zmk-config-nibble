@@ -19,8 +19,8 @@ CONFIG_ZMK_KEYBOARD_NAME="Nibble-RC"
 CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
 
 # Reduce debouncing time to make it feels more responsive (default is 5 for both directions)
-CONFIG_ZMK_KSCAN_DEBOUNCE_PRESS_MS=60
-CONFIG_ZMK_KSCAN_DEBOUNCE_RELEASE_MS=60
+CONFIG_ZMK_KSCAN_DEBOUNCE_PRESS_MS=1
+CONFIG_ZMK_KSCAN_DEBOUNCE_RELEASE_MS=5
 
 # Enable (Beta) Power Management Feature after 1.5h
 CONFIG_ZMK_SLEEP=y

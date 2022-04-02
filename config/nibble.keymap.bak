@@ -42,8 +42,8 @@
         combo_lock1 {
 			timeout-ms = <10000>;
 			// key-positions = <31 69>; // EXT + RCTRL
-			key-positions = <31 13>; // Left EXT + BACKSPACE
-			key-positions = <31 13>; // Left EXT + BACKSPACE
+			// key-positions = <31 13>; // Left EXT + BACKSPACE
+			key-positions = <32 13>; // Left EXT/Caps Lock + BACKSPACE
 			layers = <3>;
 			bindings = <&tog LCK>;
         };
