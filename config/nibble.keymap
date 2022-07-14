@@ -88,7 +88,7 @@
             bindings = <
             &bt BT_CLR    &bt BT0     &bt BT1           &bt BT2            &bt BT3          &bt BT4       &trans        &trans     &trans     &trans    &trans       &trans        &trans      &trans    &trans
 &none       &trans        &trans      &trans            &trans             &trans           &trans        &trans        &trans     &trans     &trans    &trans       &trans        &trans      &trans    &trans
-&none       &trans        &trans      &trans            &trans             &trans           &trans        &trans        &trans     &trans     &trans    &trans       &trans                    &trans    &trans
+&none       &kp CAPS      &trans      &trans            &trans             &trans           &trans        &trans        &trans     &trans     &trans    &trans       &trans                    &trans    &trans
 &trans      &trans        &trans      &ext_power EP_OFF &ext_power EP_ON   &trans           &out OUT_USB  &out OUT_BLE  &trans     &trans     &trans    &bootloader  &reset        &trans      &trans    &trans
 &trans      &trans        &trans      &trans                                                &trans                                 &trans     &trans    &trans       &trans                    &trans    &trans
             >;
